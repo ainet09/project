@@ -1,4 +1,4 @@
-from .models import *
+from .models import  CategoryProductsModel, ProductsModel, TableModel, Booking, AboutModel
 from django.views.generic import *
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -84,12 +84,57 @@ class HomeView(TemplateView):
     template_name = 'home.html'
 
 
+
 class CategoryView(ListView):
     template_name = "home.html"
+    model = CategoryProductsModel
+    context_object_name = 'category_data'
+
+
+class ProductView(ListView):
+    template_name = 'home.html'
+    model = ProductsModel
+    queryset = TableModel.objects.all()
+
+ 
+
+class PalovView(ListView):
+    template_name = 'pages/palov.html'
+    model = ProductsModel
+   
+
+
+class KebabView(ListView):
+    template_name = 'pages/kebab.html'
+    model = ProductsModel
+
+
+class DessertView(ListView):
+    template_name = 'pages/dessert.html'
+    model = ProductsModel
+
+
+
+class DrinksView(ListView):
+    template_name = 'pages/drinks.html'
+    model = ProductsModel
+
+
+class SteakView(ListView):
+    template_name = 'pages/steak.html'
+    model = ProductsModel
+
+
+class SaladsView(ListView):
+    template_name = 'pages/salads.html'
+    model = ProductsModel
+    queryset = ProductsModel.objects.all()
 
 
 class LocationView(TemplateView):
     template_name = './pages/location.html'
+    context_object_name = 'location_data'
+
 
 
 class AboutView(ListView):
@@ -98,9 +143,14 @@ class AboutView(ListView):
     context_object_name = 'about_data'
 
 
-class ProductView(ListView):
-    template_name = 'home.html'
-    queryset = TableModel.objects.all()
+
+
+
+
+
+
+
+
 
 
 def table_view(request):
@@ -153,7 +203,7 @@ def booking_view(request):
                 return redirect('booking_failed')
     else:
         form = BookingForm()
-    return render(request, 'book_table.html', {'form':id})
+    return render(request, 'book_table.html', {'form':form  })
 
 
 

@@ -1,25 +1,23 @@
 from django.db import models
 
 
-# Create your models here.
-
+# home .
 
 class CategoryProductsModel(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField()
 
-    def __str__(self):
-        return self.name
+   
 
-
-class CategoryTableModel(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField()
-    image = models.ImageField()
 
     def __str__(self):
         return self.name
+    
+
+    class Meta:
+        verbose_name = 'name'
+        verbose_name_plural = 'names'
 
 
 class ProductsModel(models.Model):
@@ -28,8 +26,27 @@ class ProductsModel(models.Model):
     name = models.CharField(max_length=255)
     price = models.TextField()
 
+        
+
+
     def __str__(self):
         return self.name
+    
+
+
+
+
+# table and booking
+class CategoryTableModel(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField()
+    
+    
+
+    def __str__(self):
+        return self.name
+
 
 
 class TableModel(models.Model):

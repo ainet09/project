@@ -1,5 +1,6 @@
-{%load static%}
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,138 +11,143 @@
     <link rel="stylesheet" href="{% static 'style/all.min.css'%}">
     <link rel="stylesheet" href="{% static 'style/fonts.css'%}">
     <link rel="stylesheet" href="{% static 'style/media.css'%}">
-    <title>Document</title>
+    <title>Restaurant</title>
 </head>
+
 <body>
      <div class="container ">
-    <nav class="nav">
-      <a href="{% url 'home' %}" class="logo__title">restaurant</a>
-                <ul class="list">
-                    <li><a href="{% url 'location' %}" class="nav__link">Location</a></li>
-                    <li><a href="{% url 'home'%}" class="nav__link">Menus</a></li>
-                    <li><a href="{% url 'about' %}" class="nav__link">Our Story</a></li>
-                   
-                    <li><a href="{% url 'booking_view' %}" class="nav__link">Reservations</a></li>
-             </ul> 
-    </nav>
+        <nav class="nav">
+          <a href="{% url 'home' %}" class="logo__title">restaurant</a>
+            <ul class="list">
+                <li><a href="{% url 'location' %}" class="nav__link">Location</a></li>
+                <li><a href="{% url 'home' %}" class="nav__link">Menus</a></li>
+                <li><a href="{% url 'about' %}" class="nav__link">Our Story</a></li>
 
-    
+                <li><a href="{% url 'booking_view' %}" class="nav__link">Reservations</a></li>
+             </ul>
+        </nav>
+    </div>
+
+
     <header class="header">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner korusel">
-              <div class="carousel-item active ">
-                <img src="{%static './image/res1.jfif' %}" class="d-block  image" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{%static './image/res2.webp' %}" class="d-block  image" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{%static './image/res4.webp' %}" class="d-block image" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
-          
-          <div class="welcome">
-            <h2 class="welcom__title">Welcome</h2>
-            <a href="{% url 'booking_view'%}" class="welcome__link">Reservations</a>
+          <div class="carousel-inner korusel">
+            <div class="carousel-item active ">
+              <img src="{% static './image/res1.jfif' %}" class="d-block  image" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static './image/res2.webp' %}" class="d-block  image" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static './image/res4.webp' %}" class="d-block image" alt="...">
+            </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        
+        <div class="welcome">
+          <h2 class="welcom__title">Welcome</h2>
+          <a href="{% url 'booking_view'%}" class="welcome__link">Reservations</a>
+        </div>
 </header>
-</div>
+
 <main class="main">
-    <section class="collect">
-        <div class="container collect__iteam">
-        <p class="collect__title">Colletta, which means “collection” in Italian, is just that – a compilation of lively dining experiences. Colletta celebrates the best of Italian American dishes with welcoming hospitality and service. Seasonal changes guide the menu of scratch-made pasta made in-house daily, cheeses, antipastis, pizzas and more. Staying true to Italian dining traditions, Colletta also offers a “For the Table” dining option curated for a family-style experience, offered nightly alongside the full à la carte menu.</p>
-        <a href="{% url 'about' %}" class="collect__link">learn more</a>
-    </div>
-    </section>
-    
-  <section class="menu" id="menu">
-    <div class="menu__fon">
-    <h2 class="menu__title">Menu</h2>
-  </div>
-    <div class="container">
-      <div class="menu__iteam">
-        <a href="{% url 'home' %}" class="menu__card">
-        <img src="{% static './image/palov.jpg' %}" alt="" class="menucard__image">
-          <div class="menucard__box">
-            <h3 class="menucard__title"> - National foods - </h3>
-            <p class="menucard__text">It is divided into different types according to its taste and preparation method, and it is prepared in a different way in each country. The basis of the dish is rice . In addition to this ingredient, oil, meat, carrots, onions and other ingredients are used.</p> 
-            <h2 class="menucard__price"> 150 000 so`m </h2>
-          </div>
-        </a>
-        <a href="{% url 'home' %}" class="menu__card flex-row-reverse">
-        <img src="{{% url 'home' %}" alt="" class="menucard__image">
-          <div class="menucard__box">
-            <h3 class="menucard__title"> - Steak - </h3>
-            <p class="menucard__text">A steak, also sometimes called "beef steak", is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though it can also be pan-fried. Steak can also be cooked in sauce, such as in steak and kidney pie, or minced and formed into patties, such as hamburgers.</p> 
-            <h2 class="menucard__price">200 000 so`m</h2>
-          </div>
-        </a>
-        <a href="{% url 'home' %}" class="menu__card">
-        <img src="{% static './image/shashlik.jpg' %}" alt="" class="menucard__image">
-          <div class="menucard__box">
-            <h3 class="menucard__title">- Kebab - </h3>
-            <p class="menucard__text">Kebabs consist of cut up or ground meat, sometimes with vegetables, and various other accompaniments according to the specific recipe. Although kebabs are typically cooked on a skewer over a fire, some kebab dishes are baked in a pan in an oven or prepared as a stew such as tas kebab. The traditional meat for kebabs is most often mutton or lamb, but regional recipes may include beef, goat, chicken, fish, and sometimes pork depending on whether or not there are specific religious prohibitions.</p> 
-            <h2 class="menucard__price">  25 000 so`m  </h2>
-          </div>
-        </a>
-        <a href="{% url 'home' %}" class="menu__card flex-row-reverse">
-          <img src="{% static './image/salad.jpeg"' %} alt="" class="menucard__image">
-            <div class="menucard__box">
-              <h3 class="menucard__title"> - Salads - </h3>
-              <p class="menucard__text">A salad is a dish consisting of mixed, mostly natural ingredients with at least one raw ingredient. They are often dressed, and typically served at room temperature or chilled, though some can be served warm.
-                <br>
-                Garden salads use a base of leafy greens such as lettuce, arugula/rocket, kale or spinach; they are common enough that the word salad alone often refers specifically to garden salads. Other types include bean salad, tuna salad, fattoush, Greek salad (vegetable-based, but without leafy greens), and sōmen salad (a noodle-based salad).</p> 
-              <h2 class="menucard__price"> 20 000 - 350 000 so`m</h2>
-            </div>
-          </a>
-        <a href="{% url 'home' %}" class="menu__card">
-          <img src="{% static './image/dessert.jpg' %}" alt="" class="menucard__image">
-            <div class="menucard__box">
-              <h3 class="menucard__title"> - Desserts - </h3>
-              <p class="menucard__text">The term dessert can apply to many confections, such as biscuits, cakes, cookies, custards, gelatins, ice creams, pastries, pies, puddings, macaroons, sweet soups, tarts, and fruit salad. Fruit is also commonly found in dessert courses because of its naturally occurring sweetness. Some cultures sweeten foods that are more commonly savory to create desserts.</p> 
-              <h2 class="menucard__price"> 50 000 - 500 000 so`m </h2>
-            </div>
-          </a>
-          <a href="{% url 'home' %}" class="menu__card flex-row-reverse">
-            <img src="{% static './image/drinks.png' %}" alt="" class="menucard__image">
-              <div class="menucard__box">
-                <h3 class="menucard__title"> - Drinks - </h3>
-                <p class="menucard__text">A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture. Common types of drinks include plain drinking water, milk, juice, smoothies and soft drinks. Traditionally warm beverages include coffee, tea, and hot chocolate. Caffeinated drinks that contain the stimulant caffeine have a long history.</p> 
-                <h2 class="menucard__price"> 10 000 - 500 000 so`m</h2>
-              </div>
-            </a>
+  <section class="collect">
+      <div class="container collect__iteam">
+          <p class="collect__title">Colletta, which means “collection” in Italian, is just that – a compilation of lively dining experiences. Colletta celebrates the best of Italian American dishes with welcoming hospitality and service. Seasonal changes guide the menu of scratch-made pasta made in-house daily, cheeses, antipastis, pizzas and more. Staying true to Italian dining traditions, Colletta also offers a “For the Table” dining option curated for a family-style experience, offered nightly alongside the full à la carte menu.</p>
+          <a href="{% url 'about' %}" class="collect__link">learn more</a>
       </div>
-    </div>
   </section>
-  
-  
-</main>
 
-<footer class="footer">
-  <div class="container footer__iteam">
-    <a href="{% url 'home' %}" class="logo__title footer__logo">restaurant</a>
-    
-    <a href="{% url 'log' %}" class="footer__login">login-in for employees</a>
+  
+<section class="menu" id="menu">
+  <div class="menu__fon">
+      <h2 class="menu__title">Menu</h2>
   </div>
-</footer>
+  <div class="container">
+    <div class="menu__iteam">
+      <a href="{% url 'palov' %}" class="menu__card">
+      <img src="{% static './image/palov.jpg' %}" alt="" class="menucard__image">
+        <div class="menucard__box">
+          <h3 class="menucard__title"> - National foods - </h3>
+          <p class="menucard__text">It is divided into different types according to its taste and preparation method, and it is prepared in a different way in each country. The basis of the dish is rice . In addition to this ingredient, oil, meat, carrots, onions and other ingredients are used.</p> 
+          <h2 class="menucard__price"> 150 000 so`m </h2>
+        </div>
+      </a>
+      <a href="{% url 'home' %}" class="menu__card flex-row-reverse">
+      <img src="{% url 'home' %}" alt="" class="menucard__image">
+        <div class="menucard__box">
+          <h3 class="menucard__title"> - Steak - </h3>
+          <p class="menucard__text">A steak, also sometimes called "beef steak", is a meat generally sliced across the muscle fibers, potentially including a bone. It is normally grilled, though it can also be pan-fried. Steak can also be cooked in sauce, such as in steak and kidney pie, or minced and formed into patties, such as hamburgers.</p> 
+          <h2 class="menucard__price">200 000 so`m</h2>
+        </div>
+      </a>
+      <a href="{% url 'home' %}" class="menu__card">
+      <img src="{% static './image/shashlik.jpg' %}" alt="" class="menucard__image">
+        <div class="menucard__box">
+          <h3 class="menucard__title">- Kebab - </h3>
+          <p class="menucard__text">Kebabs consist of cut up or ground meat, sometimes with vegetables, and various other accompaniments according to the specific recipe. Although kebabs are typically cooked on a skewer over a fire, some kebab dishes are baked in a pan in an oven or prepared as a stew such as tas kebab. The traditional meat for kebabs is most often mutton or lamb, but regional recipes may include beef, goat, chicken, fish, and sometimes pork depending on whether or not there are specific religious prohibitions.</p> 
+          <h2 class="menucard__price">  25 000 so`m  </h2>
+        </div>
+      </a>
+      <a href="{% url 'home' %}" class="menu__card flex-row-reverse">
+        <img src=" {% static './image/salad.jpeg' %}" alt="" class="menucard__image">
+          <div class="menucard__box">
+            <h3 class="menucard__title"> - Salads - </h3>
+            <p class="menucard__text">A salad is a dish consisting of mixed, mostly natural ingredients with at least one raw ingredient. They are often dressed, and typically served at room temperature or chilled, though some can be served warm.
+              <br>
+              Garden salads use a base of leafy greens such as lettuce, arugula/rocket, kale or spinach; they are common enough that the word salad alone often refers specifically to garden salads. Other types include bean salad, tuna salad, fattoush, Greek salad (vegetable-based, but without leafy greens), and sōmen salad (a noodle-based salad).</p> 
+            <h2 class="menucard__price"> 20 000 - 350 000 so`m</h2>
+          </div>
+        </a>
+      <a href="{% url 'home' %}" class="menu__card">
+        <img src="{% static './image/dessert.jpg' %}" alt="" class="menucard__image">
+          <div class="menucard__box">
+            <h3 class="menucard__title"> - Desserts - </h3>
+            <p class="menucard__text">The term dessert can apply to many confections, such as biscuits, cakes, cookies, custards, gelatins, ice creams, pastries, pies, puddings, macaroons, sweet soups, tarts, and fruit salad. Fruit is also commonly found in dessert courses because of its naturally occurring sweetness. Some cultures sweeten foods that are more commonly savory to create desserts.</p> 
+            <h2 class="menucard__price"> 50 000 - 500 000 so`m </h2>
+          </div>
+        </a>
+        <a href="{% url 'home' %}" class="menu__card flex-row-reverse">
+          <img src="{% static './image/drinks.png' %}" alt="" class="menucard__image">
+            <div class="menucard__box">
+              <h3 class="menucard__title"> - Drinks - </h3>
+              <p class="menucard__text">A drink (or beverage) is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture. Common types of drinks include plain drinking water, milk, juice, smoothies and soft drinks. Traditionally warm beverages include coffee, tea, and hot chocolate. Caffeinated drinks that contain the stimulant caffeine have a long history.</p> 
+              <h2 class="menucard__price"> 10 000 - 500 000 so`m</h2>
+            </div>
+          </a>
+    </div>
+  </div>
+</section>
 
 
-       <script src="{% static './style/bootstrap.js' %}"></script>
-    <script src="{% static './js/js.js' %}"></script>
+</main>
+        
+
+    <footer class="footer">
+      <div class="container footer__iteam">
+        <a href="{% url 'home' %}" class="logo__title footer__logo">restaurant</a>
+        <a href="{% url 'log' %}" class="footer__login">login-in for employees</a>
+      </div>
+    </footer>
+         <script src="{% static './style/bootstrap.js' %}"></script>
+         <script src="{% static './js/js.js' %}"></script>
  
 </body>
 </html>
+
+ 
+
+ 
